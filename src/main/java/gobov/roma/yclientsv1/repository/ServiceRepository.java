@@ -1,0 +1,7 @@
+package gobov.roma.yclientsv1.repository;
+
+import gobov.roma.yclientsv1.model.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ServiceRepository extends JpaRepository<Service, Long> {
+}

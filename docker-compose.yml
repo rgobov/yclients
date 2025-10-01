@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  mongodb1:
+    image: mongo:latest
+    container_name: mongodb1
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    command: --bind_ip 0.0.0.0  # ← КЛЮЧЕВОЙ ПАРАМЕТР!
+    volumes:
+      - ./data/mongodb1:/data/db
+
+  mongodb2:
+    image: mongo:latest
+    container_name: mongodb2
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    command: --bind_ip 0.0.0.0
+    volumes:
+      - ./data/mongodb2:/data/db
+
+  mongodb3:
+    image: mongo:latest
+    container_name: mongodb3
+    ports:
+      - "27019:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    command: --bind_ip 0.0.0.0
+    volumes:
+      - ./data/mongodb3:/data/db
